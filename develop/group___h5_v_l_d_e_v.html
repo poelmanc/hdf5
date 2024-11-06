@@ -37,7 +37,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="HDFG-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">HDF5<span id="projectnumber">&#160;2.0.0.0b3f1c7</span>
+   <div id="projectname">HDF5<span id="projectnumber">&#160;2.0.0.d09ea66</span>
    </div>
    <div id="projectbrief">API Reference</div>
   </td>
@@ -141,8 +141,44 @@ Functions</h2></td></tr>
 <tr class="separator:ga21f351a8a3a128659f57217a3b452cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga161553978d3d001a5b04708acccb429f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_h5_ipublic_8h.html#a0045db7ff9c22ad35db6ae91662e1943">hid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h5_v_l_d_e_v.html#ga161553978d3d001a5b04708acccb429f">H5VLget_file_type</a> (void *file_obj, <a class="el" href="_h5_ipublic_8h.html#a0045db7ff9c22ad35db6ae91662e1943">hid_t</a> connector_id, <a class="el" href="_h5_ipublic_8h.html#a0045db7ff9c22ad35db6ae91662e1943">hid_t</a> dtype_id)</td></tr>
 <tr class="separator:ga161553978d3d001a5b04708acccb429f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3b0dc77bc58f9d84cbeb733da1cb94d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_h5public_8h.html#a3b079ecf932a5c599499cf7e298af160">herr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h5_v_l_d_e_v.html#gae3b0dc77bc58f9d84cbeb733da1cb94d">H5VLopen_lib_context</a> (void **context)</td></tr>
+<tr class="memdesc:gae3b0dc77bc58f9d84cbeb733da1cb94d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a new internal context for the HDF5 library.  <br /></td></tr>
+<tr class="separator:gae3b0dc77bc58f9d84cbeb733da1cb94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae05f169607f8be714fd34424c3786ee0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_h5public_8h.html#a3b079ecf932a5c599499cf7e298af160">herr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h5_v_l_d_e_v.html#gae05f169607f8be714fd34424c3786ee0">H5VLclose_lib_context</a> (void *context)</td></tr>
+<tr class="memdesc:gae05f169607f8be714fd34424c3786ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the internal state of the HDF5 library.  <br /></td></tr>
+<tr class="separator:gae05f169607f8be714fd34424c3786ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="gae05f169607f8be714fd34424c3786ee0" name="gae05f169607f8be714fd34424c3786ee0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae05f169607f8be714fd34424c3786ee0">&#9670;&#160;</a></span>H5VLclose_lib_context()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_h5public_8h.html#a3b079ecf932a5c599499cf7e298af160">herr_t</a> H5VLclose_lib_context </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Closes the internal state of the HDF5 library. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>library's context</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a non-negative value if successful; otherwise, returns a negative value.</dd></dl>
+<p>Closes the internal state of the HDF5 library, undoing the effects of <a class="el" href="group___h5_v_l_d_e_v.html#gae3b0dc77bc58f9d84cbeb733da1cb94d" title="Opens a new internal context for the HDF5 library.">H5VLopen_lib_context()</a>. This function must be called as a <em>pair</em> with <a class="el" href="group___h5_v_l_d_e_v.html#gae3b0dc77bc58f9d84cbeb733da1cb94d" title="Opens a new internal context for the HDF5 library.">H5VLopen_lib_context()</a>. It can be invoked before, after, or independently of <a class="el" href="_h5_v_lconnector__passthru_8h.html#a37856e5f0914916c4ac36cbc0e6bed84">H5VLfree_lib_state()</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>This routine is exclusively for authors of HDF5 VOL connectors. It is not part of the public HDF5 APIs for HDF5 application developers.</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2.0.0 </dd></dl>
+
+</div>
+</div>
 <a id="ga161553978d3d001a5b04708acccb429f" name="ga161553978d3d001a5b04708acccb429f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga161553978d3d001a5b04708acccb429f">&#9670;&#160;</a></span>H5VLget_file_type()</h2>
 
@@ -192,6 +228,36 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae3b0dc77bc58f9d84cbeb733da1cb94d" name="gae3b0dc77bc58f9d84cbeb733da1cb94d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae3b0dc77bc58f9d84cbeb733da1cb94d">&#9670;&#160;</a></span>H5VLopen_lib_context()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_h5public_8h.html#a3b079ecf932a5c599499cf7e298af160">herr_t</a> H5VLopen_lib_context </td>
+          <td>(</td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Opens a new internal context for the HDF5 library. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">context</td><td>library's context</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a non-negative value if <code>*context</code> is set; otherwise returns negative value if <code>*context</code> is unset.</dd></dl>
+<p>Opens a new internal context for the HDF5 library. The context returned (via the OUT parameter) must be passed to <a class="el" href="group___h5_v_l_d_e_v.html#gae05f169607f8be714fd34424c3786ee0" title="Closes the internal state of the HDF5 library.">H5VLclose_lib_context()</a> to conclude the library's context and release resources.</p>
+<dl class="section note"><dt>Note</dt><dd>This routine is exclusively for authors of HDF5 VOL connectors. It is not part of the public HDF5 APIs for HDF5 application developers.</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2.0.0 </dd></dl>
 
 </div>
 </div>
