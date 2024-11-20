@@ -37,7 +37,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="HDFG-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">HDF5<span id="projectnumber">&#160;2.0.0.1a9c405</span>
+   <div id="projectname">HDF5<span id="projectnumber">&#160;2.0.0.258fa78</span>
    </div>
    <div id="projectbrief">API Reference</div>
   </td>
@@ -587,6 +587,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="astruct_h5_o__info2__t_html"><div class="ttname"><a href="struct_h5_o__info2__t.html">H5O_info2_t</a></div><div class="ttdef"><b>Definition</b> H5Opublic.h:145</div></div>
 <div class="ttc" id="astruct_h5_o__info2__t_html_a6e12ef8203e400ee995a41a24e981539"><div class="ttname"><a href="struct_h5_o__info2__t.html#a6e12ef8203e400ee995a41a24e981539">H5O_info2_t::type</a></div><div class="ttdeci">H5O_type_t type</div><div class="ttdef"><b>Definition</b> H5Opublic.h:149</div></div>
 </div><!-- fragment --></dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd><b>Leaving callback functions:</b><br  />
+ The callback function must return normally, even in the case of error. Returning with H5_ITER_ERROR, instead of leaving by means of exceptions, exit() function, etc... will allow the HDF5 library to manage its resources and maintain a consistent state. See <a class="el" href="_r_m.html#cpp_c_api_note">C++ Developers using HDF5 C-API functions</a> warning for detail.</dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.14.0 </dd></dl>
 
 </div>
@@ -1149,6 +1151,8 @@ Applications sometimes write data only to portions of an allocated dataset. It i
 <p><code>op</code> is a callback function that handles the gathered data. It is optional if <code>dst_buf</code> is large enough to hold all of the gathered data; required otherwise.</p>
 <p>If no callback function is provided, <a class="el" href="group___h5_d.html#ga1f6a428a8234d7c2ccba7da4742d79be" title="Gathers data from a selection within a memory buffer raw data chunk in a dataset.">H5Dgather()</a> simply gathers the data into <code>dst_buf</code> and returns. If a callback function is provided, <a class="el" href="group___h5_d.html#ga1f6a428a8234d7c2ccba7da4742d79be" title="Gathers data from a selection within a memory buffer raw data chunk in a dataset.">H5Dgather()</a> repeatedly gathers up to <code>dst_buf_size</code> bytes to process the serialized data.</p>
 <p>The callback function <code>op</code> should process, store, or otherwise, make use of the data returned in <code>dst_buf</code> before it returns, because the buffer will be overwritten unless it is the last call to the callback. This function will be repeatedly called until all gathered elements have been passed to the callback in <code>dst_buf</code>. The callback function should return zero (0) to indicate success, and a negative value to indicate failure.</p>
+<dl class="section attention"><dt>Attention</dt><dd><b>Leaving callback functions:</b><br  />
+ The callback function must return normally, even in the case of error. Returning with H5_ITER_ERROR, instead of leaving by means of exceptions, exit() function, etc... will allow the HDF5 library to manage its resources and maintain a consistent state. See <a class="el" href="_r_m.html#cpp_c_api_note">C++ Developers using HDF5 C-API functions</a> warning for detail.</dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.10.2 </dd></dl>
 
 </div>
@@ -1735,6 +1739,8 @@ Applications sometimes write data only to portions of an allocated dataset. It i
 <p><a class="el" href="group___h5_d.html#ga71421c684884ab49765748720fe938db" title="Iterates over all selected elements in a dataspace.">H5Diterate()</a> iterates over all the data elements in the memory buffer <code>buf</code>, executing the callback function <code>op</code> once for each such data element.</p>
 <dl class="section attention"><dt>Attention</dt><dd>Unlike other HDF5 iterators, this iteration operation cannot be restarted at the point of exit; a second <a class="el" href="group___h5_d.html#ga71421c684884ab49765748720fe938db" title="Iterates over all selected elements in a dataspace.">H5Diterate()</a> call will always restart at the beginning.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Modifying the selection of <code>space_id</code> during iteration will lead to undefined behavior.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd><b>Leaving callback functions:</b><br  />
+ The callback function must return normally, even in the case of error. Returning with H5_ITER_ERROR, instead of leaving by means of exceptions, exit() function, etc... will allow the HDF5 library to manage its resources and maintain a consistent state. See <a class="el" href="_r_m.html#cpp_c_api_note">C++ Developers using HDF5 C-API functions</a> warning for detail.</dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.10.2 </dd></dl>
 
 </div>

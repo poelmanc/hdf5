@@ -37,7 +37,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="HDFG-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">HDF5<span id="projectnumber">&#160;2.0.0.1a9c405</span>
+   <div id="projectname">HDF5<span id="projectnumber">&#160;2.0.0.258fa78</span>
    </div>
    <div id="projectbrief">API Reference</div>
   </td>
@@ -1857,7 +1857,9 @@ Functions</h2></td></tr>
 <div class="ttc" id="a_h5_tpublic_8h_html_a8825c3dcb04c35a26f8709791b1fdb5e"><div class="ttname"><a href="_h5_tpublic_8h.html#a8825c3dcb04c35a26f8709791b1fdb5e">H5T_conv_except_func_t</a></div><div class="ttdeci">H5T_conv_ret_t(* H5T_conv_except_func_t)(H5T_conv_except_t except_type, hid_t src_id, hid_t dst_id, void *src_buf, void *dst_buf, void *user_data)</div><div class="ttdoc">Exception handler.</div><div class="ttdef"><b>Definition</b> H5Tpublic.h:239</div></div>
 <div class="ttc" id="a_h5_tpublic_8h_html_ab0559be2b5911fe789b6b6f1fe94419a"><div class="ttname"><a href="_h5_tpublic_8h.html#ab0559be2b5911fe789b6b6f1fe94419a">H5T_conv_ret_t</a></div><div class="ttdeci">H5T_conv_ret_t</div><div class="ttdef"><b>Definition</b> H5Tpublic.h:188</div></div>
 <div class="ttc" id="a_h5_tpublic_8h_html_ab9a2209f1ee5e5bf2b4f75affa9a195b"><div class="ttname"><a href="_h5_tpublic_8h.html#ab9a2209f1ee5e5bf2b4f75affa9a195b">H5T_conv_except_t</a></div><div class="ttdeci">H5T_conv_except_t</div><div class="ttdef"><b>Definition</b> H5Tpublic.h:168</div></div>
-</div><!-- fragment --><dl class="section since"><dt>Since</dt><dd>1.8.0 </dd></dl>
+</div><!-- fragment --><dl class="section attention"><dt>Attention</dt><dd><b>Leaving callback functions:</b><br  />
+ The callback function must return normally, even in the case of error. Returning with H5_ITER_ERROR, instead of leaving by means of exceptions, exit() function, etc... will allow the HDF5 library to manage its resources and maintain a consistent state. See <a class="el" href="_r_m.html#cpp_c_api_note">C++ Developers using HDF5 C-API functions</a> warning for detail.</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.8.0 </dd></dl>
 
 </div>
 </div>

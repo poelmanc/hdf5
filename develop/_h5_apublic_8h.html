@@ -37,7 +37,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="HDFG-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">HDF5<span id="projectnumber">&#160;2.0.0.1a9c405</span>
+   <div id="projectname">HDF5<span id="projectnumber">&#160;2.0.0.258fa78</span>
    </div>
    <div id="projectbrief">API Reference</div>
   </td>
@@ -320,6 +320,8 @@ Functions</h2></td></tr>
 <li>Negative causes the iterator to immediately return that value, indicating failure. The iterator can be restarted at the next attribute.</li>
 </ul>
 </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd><b>Leaving callback functions:</b><br  />
+ The callback function must return normally, even in the case of error. Returning with H5_ITER_ERROR, instead of leaving by means of exceptions, exit() function, etc... will allow the HDF5 library to manage its resources and maintain a consistent state. See <a class="el" href="_r_m.html#cpp_c_api_note">C++ Developers using HDF5 C-API functions</a> warning for detail.</dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.8.0 </dd></dl>
 
 </div>
